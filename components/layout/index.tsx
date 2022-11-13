@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 interface LayoutProps {
   children: ReactNode;
@@ -6,7 +7,13 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const { children } = props;
-  return <div className="h-screen w-screen p-2 font-mono">{children}</div>;
+  const queryClient = new QueryClient();
+
+  return (
+    <div className="h-screen w-screen p-2 font-mono">
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </div>
+  );
 };
 
 export default Layout;
