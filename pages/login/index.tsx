@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 
 import { saveDataInCookies } from "../../utils/helpers";
 import { TASK_MANAGER_ENDPOINT } from "../../utils/constants";
